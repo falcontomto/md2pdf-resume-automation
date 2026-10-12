@@ -1,0 +1,42 @@
+name: Build PDF
+
+on:
+  workflow_dispatch:
+    inputs:
+      markdown_file:
+        description: Markdown file to convert
+        default: RESUME.md
+  push:
+    paths:
+      - "**.md"
+      - "export.py"
+      - "styles.css"
+      - "requirements.txt"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MD_FILE: ${{ inputs.markdown_file || 'RESUME.md' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Export PDF
+        run: |
+          python export.py "$MD_FILE"
+          echo "PDF_FILE=${MD_FILE%.md}.pdf" >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: ${{ env.PDF_FILE }}
+          if-no-files-found: error
