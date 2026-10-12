@@ -1,8 +1,8 @@
 # YAT TO
 
 **Mobile Engineer** · iOS, Swift & Kotlin Multiplatform  
-Brighton, UK · (+44) 7737497659 · [yat.to@icloud.com](mailto:YAT.TO@ICLOUD.COM)  
-[LinkedIn](https://www.linkedin.com/in/yat-to-246456149) · [GitHub](https://github.com/falcontomto)
+Brighton, UK · [(+44) 7737497659](tel:+447737497659) · [yat.to@icloud.com](mailto:yat.to@icloud.com)  
+LinkedIn: [linkedin.com/in/yat-to-246456149](https://linkedin.com/in/yat-to-246456149) · GitHub: [github.com/falcontomto](https://github.com/falcontomto)
 
 ## Summary
 
