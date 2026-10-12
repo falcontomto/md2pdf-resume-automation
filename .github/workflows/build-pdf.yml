@@ -54,7 +54,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag="pdf-$(date +%F)-${GITHUB_RUN_NUMBER}"
+          tag="pdf-$(date +%Y-%m-%dT%H.%M.%SZ)-${GITHUB_RUN_NUMBER}"
           gh release create "$tag" "$PDF_FILE" \
             --target "$GITHUB_SHA" \
             --title "$(basename "$PDF_FILE")" \
